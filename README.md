@@ -26,7 +26,34 @@ npm run build    # production build → /dist
 npm run preview  # serve /dist locally
 ```
 
-## Deploy to Vercel
-Push to GitHub → import the repo at [vercel.com/new](https://vercel.com/new) → click Deploy. No environment variables needed.
-
 ## Project structure
+
+src/
+
+├── App.tsx                    # composes all sections
+
+├── main.tsx                   # React entry
+
+├── index.css                  # global styles
+
+└── components/
+
+├── HeroSection.tsx        # navbar, name, video background, social links
+
+├── AboutSection.tsx       # bio, skills, education timeline
+
+├── ServicesSection.tsx    # achievements & certifications
+
+├── ProjectsSection.tsx    # project cards
+
+├── ContactSection.tsx     # contact methods with icons
+
+│
+
+├── ContactButton.tsx      # gradient pill CTA
+
+├── LiveProjectButton.tsx  # ghost outline pill
+
+├── FadeIn.tsx             # whileInView animation wrapper
+
+└── CursorTrail.tsx        # mouse-following particle trail
