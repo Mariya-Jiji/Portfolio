@@ -141,13 +141,29 @@ const HeroSection = () => {
   // Snap-scroll on first scroll/key
   useEffect(() => {
     let fired = false;
-    const goToAbout = () => { if (fired) return; fired = true; setStopAfterRound(true); document.getElementById('about')?.scrollIntoView({ behavior: 'auto', block: 'start' }); };
+    const goToAbout = () => {
+      if (fired) return;
+      fired = true;
+      setStopAfterRound(true);
+      const video = videoRef.current;
+      if (video) video.loop = false;
+      document.getElementById('about')?.scrollIntoView({ behavior: 'auto', block: 'start' });
+    };
     const onWheel = (e: WheelEvent) => { if (fired || e.deltaY <= 0 || window.scrollY > 50) return; e.preventDefault(); goToAbout(); };
     const onKey = (e: KeyboardEvent) => { if (fired || window.scrollY > 50) return; if (['ArrowDown','PageDown',' '].includes(e.key)) { e.preventDefault(); goToAbout(); } };
     window.addEventListener('wheel', onWheel, { passive: false });
     window.addEventListener('keydown', onKey);
     return () => { window.removeEventListener('wheel', onWheel); window.removeEventListener('keydown', onKey); };
   }, []);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (stopAfterRound) {
+      video.loop = false;
+    }
+  }, [stopAfterRound]);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -187,6 +203,7 @@ const HeroSection = () => {
       <video
         ref={videoRef}
         autoPlay
+        loop
         playsInline
         className="absolute inset-0 h-full w-full object-cover"
       >
