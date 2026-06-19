@@ -32,18 +32,18 @@ const ProjectCard = ({ project, index, total }: { project: ProjectData; index: n
 
   return (
     <div ref={cardRef} className="sticky w-full" style={{ top: `${96 + index * 28}px`, height: '85vh' }}>
-      <motion.article style={{ scale }}
-        className="origin-top mx-auto h-full w-full flex flex-col gap-4 sm:gap-6 md:gap-8 rounded-[40px] sm:rounded-[50px] md:rounded-[60px] p-4 sm:p-6 md:p-8 transition-all duration-500"
-        onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
-        onHoverStart={() => setHovered(true)} onHoverEnd={() => setHovered(false)}
-        style={{
-          scale,
-          border: `2px solid ${hovered ? project.accentColor + '60' : 'rgba(215,226,234,0.3)'}`,
-          background: '#0C0C0C',
-          boxShadow: hovered ? `0 0 60px ${project.accentColor}15, inset 0 0 60px ${project.accentColor}05` : 'none',
-          transition: 'border-color 0.4s, box-shadow 0.4s',
-        } as React.CSSProperties}
-      >
+      <motion.article
+  style={{
+    scale,
+    border: `2px solid ${hovered ? project.accentColor + '60' : 'rgba(215,226,234,0.3)'}`,
+    background: '#0C0C0C',
+    boxShadow: hovered ? `0 0 60px ${project.accentColor}15, inset 0 0 60px ${project.accentColor}05` : 'none',
+    transition: 'border-color 0.4s, box-shadow 0.4s',
+  }}
+  className="origin-top mx-auto h-full w-full flex flex-col gap-4 sm:gap-6 md:gap-8 rounded-[40px] sm:rounded-[50px] md:rounded-[60px] p-4 sm:p-6 md:p-8 transition-all duration-500"
+  onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
+  onHoverStart={() => setHovered(true)} onHoverEnd={() => setHovered(false)}
+>
         {/* Top row */}
         <div className="flex flex-col sm:flex-row items-start sm:justify-between gap-4 sm:gap-6">
           <div className="flex flex-row items-start gap-3 sm:gap-6 md:gap-10 min-w-0 w-full">
