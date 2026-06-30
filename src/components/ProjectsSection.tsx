@@ -20,6 +20,26 @@ const PROJECTS: ProjectData[] = [
     tech: ['JavaScript', 'Node.js', 'MongoDB', 'HTML/CSS', 'JWT'],
     accentColor: '#00ff64',
   },
+  {
+    number: '02', category: 'Full Stack · Internship Project', name: 'GraphOne',
+    liveUrl: 'https://graph-one-livid.vercel.app/',
+    col1Image1: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+    col1Image2: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80',
+    col2Image:  'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
+    description: 'A startup intelligence platform for discovering AI companies, founders, and investors — featuring trending company rankings, growth tracking, funding data, and category-based exploration across 50,000+ companies.',
+    tech: ['Next.js', 'TypeScript', 'Node.js', 'Express', 'Supabase'],
+    accentColor: '#00c8ff',
+  },
+  {
+    number: '03', category: 'Full Stack · Internship Challenge', name: 'Whereto.edu',
+    liveUrl: 'https://whereto-edu.vercel.app/',
+    col1Image1: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80',
+    col1Image2: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&q=80',
+    col2Image:  'https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=800&q=80',
+    description: 'A college discovery platform helping students search, compare, and shortlist 35+ premier Indian colleges with filters for location, fees, and ratings, plus a side-by-side compare feature.',
+    tech: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'NextAuth'],
+    accentColor: '#b46fff',
+  },
 ];
 
 const ProjectCard = ({ project, index, total }: { project: ProjectData; index: number; total: number; containerRef: React.RefObject<HTMLDivElement> }) => {
